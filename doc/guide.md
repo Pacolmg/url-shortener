@@ -1,4 +1,4 @@
-# Instrucciones Url Shortener
+Instrucciones y Aclaraciones del proyecto Url Shortener
 ============================
 
 ## Postman
@@ -7,6 +7,12 @@ La colección de Postman se puede [descargar aquí](https://raw.githubuserconten
  - url-shortener.token
  
  Si accedemos al endpoint de "Login"  automáticamente se refresca la variable `url-shortener.token` si el login es correcto.
+ 
+## Pruebas
+Si se ha seguido la instalación del proyecto a través del README, se habrán cargado unas `fixtures` con diez usuarios, se puede utilizar cualquiera de ellos para probar.
+
+Sus nombres de usuario son `user1`, `user2`, ... y la contraseña para todos es `123456`.
+
 
 ## El Acortador de Urls
 
@@ -48,7 +54,7 @@ Además de lo que puede hacer el usuario, hay otro endpoint para el que no se re
   ```
   
   Si el usuario existe, lo edita, si no, lo crea.
-  
+ 
   
   Los usuarios deben tener `ROLE_ADMIN` para poder gestionar sus urls.
 
