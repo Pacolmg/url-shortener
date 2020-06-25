@@ -1,24 +1,26 @@
-Charla Symfony
-===============
+Url Shortener - Prueba para Irontec
+====================================
 
-A Symfony project created on May 21, 2020, 7:30 pm.
+A Symfony project created on June 23, 2020, 7:30 pm.
 
-Created by paco.morcillo@solucionex.com
+Created by pacolmg@gmail.com
 
 ## Requerimientos
 Se necesita el siguiente software instalado en la máquina de desarrollo:
 - [Docker](https://docs.docker.com/install)
 - [Docker-Compose](htps://docs.docker.com/compose/install)
-- [PHP-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+- [PHP-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (Opcional)
 
-## API
-- La aplicación desarrolla un entorno CRUD web y una api, cuya colección de postman se encuentra [aquí] (https://www.getpostman.com/collections/d1ace56d76dc251d5aad)
+## Aplicación
+- La aplicación desarrolla un entorno API cuyo funcionamiento podemos leer [aquí](doc/guide.md) y su colección de Postman se encuentra [aquí](https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
 
 ## Introducción
 
-- El proyecto está en symfony 5 y es una base de datos de libros relacionados con sus autores
+- El proyecto está en symfony 5.1 y es un administrador de acortador de url's
 
 ## Instalación del Proyecto
+
+Después de hacer el clone hay que ejecutar los siguientes pasos:
 
 1.Crear el fichero .env para el docker:
 
@@ -28,7 +30,7 @@ cp .infra/docker/dist.env .infra/docker/.env
 
 2.Modificar las variables de entorno del docker (.infra/docker/.env). 
 
-- El fichero ya está preparado para trabajar con la carpeta root del proyecto:
+- El fichero ya está preparado para trabajar con la carpeta root del proyecto, con lo que no habría que tocarlo:
 ```code
 APP_DIR=../..
 ``` 
@@ -69,14 +71,14 @@ http://localhost:80
 
 6.Extra: Si actualizas tu fichero /etc/hosts añadiendo esta línea:
 ```sh
-127.0.0.1 charla-symfony.test
+127.0.0.1 url-shortener.test
 ```
 Podrás acceder a través del navegador escribiendo (recuerda el 80 por el puerto que pongas en el .env):
 ```sh
-http://charla-symfony.test:80
+http://url-shortener.test:80
 ```
 
-7.Configurar Git: ponemos un hook antes de hacer el commit para comprobar la codificación (pre-commit hook):
+7.Configurar Git (solo si tienes php-cs-fixer instalado): ponemos un hook antes de hacer el commit para comprobar la codificación (pre-commit hook):
 ```sh
 cd .infra/git
 cp hooks/pre-commit ../../.git/hooks/pre-commit
@@ -90,12 +92,26 @@ sh dsymfony doctrine:database:create
 sh dsymfony doctrine:schema:update --dump-sql -f
 ```
 
+Además precargaremos una serie de datos:
+```sh
+sh dsymfony doctrine:fixtures:load
+```
 
-Una vez hecho esto el proyecto debe funcionar correctamente. Podemos acceder a la url `/book` para comprobarlo
 
-9.El proyecto, además del CRUD que podemos en el navegador, tiene una API, los endpoints para POSTMAN se encuentran en 
+
+Una vez hecho esto el proyecto debe funcionar correctamente. Podemos acceder a la url `/api/url-shortened/ranking` para comprobarlo
+
+9.El proyecto, es una API, los endpoints para POSTMAN se encuentran en 
 este enlace: 
-[Colección de Postman de Charla-symfony](https://www.getpostman.com/collections/d1ace56d76dc251d5aad)
+[Colección de Postman de Url Shortener](https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
+
+Se habrán cargado diez usuarios con las fixtures "user1", "user2", ... todos con la contraseña "123456".
+
+10.Se pueden crear nuevos usuarios o actualizar los existenes a través de la línea de comandos
+```sh
+sh dsymfony app:create-update:user nuevo_usuario 123456 ROLE_ADMIN
+```
+
 
 ### Terminal
 
@@ -167,10 +183,4 @@ Build docker:
 
 ```sh
 sh dup
-```
-
-Use Yarn
-
-```sh
-sh dyarn [ARGS]
 ```
