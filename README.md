@@ -12,7 +12,7 @@ Se necesita el siguiente software instalado en la máquina de desarrollo:
 - [PHP-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) (Opcional)
 
 ## Aplicación
-- La aplicación desarrolla un entorno API cuyo funcionamiento podemos leer [aquí] (doc/guide.md) y su colección de Postman se encuentra [aquí] (https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
+- La aplicación desarrolla un entorno API cuyo funcionamiento podemos leer [aquí](doc/guide.md) y su colección de Postman se encuentra [aquí](https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
 
 ## Introducción
 
@@ -103,7 +103,7 @@ Una vez hecho esto el proyecto debe funcionar correctamente. Podemos acceder a l
 
 9.El proyecto, es una API, los endpoints para POSTMAN se encuentran en 
 este enlace: 
-[Colección de Postman de Url Shortener] (https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
+[Colección de Postman de Url Shortener](https://raw.githubusercontent.com/Pacolmg/url-shortener/master/doc/url-shortener.postman_collection.json)
 
 Se habrán cargado diez usuarios con las fixtures "user1", "user2", ... todos con la contraseña "123456".
 
