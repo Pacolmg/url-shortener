@@ -66,3 +66,12 @@ Además de lo que puede hacer el usuario, hay otro endpoint para el que no se re
    - Cualquier otro error será un 500, pero también se procesa y se muestra un json con el error controlado y sin la traza.
    
    Si queremos ver los errores completos, antes de mandarlos al usuario se guardan en el fichero de log.
+   
+   ## Mejoras
+   Posibles mejoras del proyecto:
+   
+   - Habría sido conveniente paginar el listado de urls. Así como el ranking.
+   - También se necesitaría un endpoint con el que registrar visitas.
+   - De las visitas se podrían registrar en un campo de tipo json toda la información de la request que llegase a la url acortada.
+   - Se podría pensar guardar en el log el body de la petición de edición y creación de urls, para depurar posibles bugs.
+   
