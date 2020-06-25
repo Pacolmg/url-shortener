@@ -1,0 +1,36 @@
+#!/bin/sh
+if [ -L 'dup' ]; then
+unlink dup
+fi
+
+if [ -L 'ddown' ]; then
+unlink ddown
+fi
+
+if [ -L 'dreset' ]; then
+unlink dreset
+fi
+
+if [ -L 'dexec' ]; then
+unlink dexec
+fi
+
+if [ -L 'droot' ]; then
+unlink droot
+fi
+
+if [ -L 'dcomposer' ]; then
+unlink dcomposer
+fi
+
+if [ -L 'dsymfony' ]; then
+unlink dsymfony
+fi
+
+if [ -L 'dyarn' ]; then
+unlink dyarn
+fi
+
+if [ -L 'dencore' ]; then
+unlink dencore
+fi

@@ -1,0 +1,57 @@
+#!/bin/sh
+
+## Custom commands symlinks
+if [ -L 'dup' ]; then
+unlink dup
+fi
+ln -s .infra/docker/bin/docker-up dup
+
+if [ -L 'ddown' ]; then
+unlink ddown
+fi
+ln -s .infra/docker/bin/docker-down ddown
+
+if [ -L 'dstart' ]; then
+unlink dstart
+fi
+ln -s .infra/docker/bin/docker-start dstart
+
+if [ -L 'dstop' ]; then
+unlink dstop
+fi
+ln -s .infra/docker/bin/docker-stop dstop
+
+if [ -L 'dreset' ]; then
+unlink dreset
+fi
+ln -s .infra/docker/bin/docker-reset dreset
+
+if [ -L 'dexec' ]; then
+unlink dexec
+fi
+ln -s .infra/docker/bin/docker-exec dexec
+
+if [ -L 'droot' ]; then
+unlink droot
+fi
+ln -s .infra/docker/bin/docker-root droot
+
+if [ -L 'dcomposer' ]; then
+unlink dcomposer
+fi
+ln -s .infra/docker/bin/docker-composer dcomposer
+
+if [ -L 'dsymfony' ]; then
+unlink dsymfony
+fi
+ln -s .infra/docker/bin/docker-symfony dsymfony
+
+if [ -L 'dyarn' ]; then
+unlink dyarn
+fi
+ln -s .infra/docker/bin/docker-yarn dyarn
+
+if [ -L 'dencore' ]; then
+unlink dencore
+fi
+ln -s .infra/docker/bin/docker-encore dencore
