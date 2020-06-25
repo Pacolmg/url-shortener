@@ -22,7 +22,7 @@ Un usuario gestiona sus propias urls y lo único que puede editar de una url que
 
 El dominio en el que se instalará el funcionamiento del acortador se puede cambiar mediante una variable de entorno en el `.env`, esta variable es `URL_SHORTENER_HOST`. 
 
-El ranking de visitas es público y ordenable por número total de visitas y número de visitas en un periodo de tiempo, que de momento es una constate (el último día).
+El ranking de visitas es público y ordenable por número total de visitas y número de visitas en un periodo de tiempo, que de momento es una constate (las últimas 24 horas).
 
 Un usuario **solo puede acceder a sus urls**, así que si hacemos login, podremos:
  - Listar nuestras urls (List)
@@ -34,7 +34,7 @@ Un usuario **solo puede acceder a sus urls**, así que si hacemos login, podremo
   -- Son obligatorios los parámetros `original_url`, `short_method`.
   
 Además de lo que puede hacer el usuario, hay otro endpoint para el que no se requiere seguridad:
- - Ranking: muestra las urls con su número total de visitas y las visitas en un último periodo de tiempo (último día)
+ - Ranking: muestra las urls con su número total de visitas y las visitas en un último periodo de tiempo (últimas 24 horas)
 
 
   ## Seguridad
