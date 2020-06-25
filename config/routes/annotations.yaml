@@ -1,0 +1,15 @@
+controllers_api_admin:
+    resource: ../../src/Controller/API/Admin
+    type: annotation
+    prefix: api/admin
+    name_prefix: api_admin_
+
+controllers_api_site:
+    resource: ../../src/Controller/API/Site
+    type: annotation
+    prefix: api
+    name_prefix: api_
+
+kernel:
+    resource: ../../src/Kernel.php
+    type: annotation

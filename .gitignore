@@ -1,0 +1,58 @@
+###> IDE files and docker files
+.DS_Store
+.idea
+.vscode
+.infra/docker/.env
+!*.gitkeep
+.infra/docker/build/backup
+.infra/docker/build/data
+.infra/docker/build/logs
+dcomposer
+ddown
+dencore
+dexec
+dreset
+dsymfony
+dup
+dyarn
+droot
+dstart
+dstop
+###< IDE files and infra .env
+
+###> bin files
+/bin/doctrine
+/bin/doctrine-dbal
+/bin/doctrine-migrations
+/bin/mage
+/bin/php-parse
+/bin/var-dump-server
+###< bin files
+
+###> uploads
+/uploads/
+###< uploads
+
+###> php-cs-fixer cache files
+.php_cs.cache
+###< php-cs-fixer cache files
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/.env.test
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
