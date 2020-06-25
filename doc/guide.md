@@ -31,10 +31,26 @@ Además de lo que puede hacer el usuario, hay otro endpoint para el que no se re
  - Ranking: muestra las urls con su número total de visitas y las visitas en un último periodo de tiempo (último día)
 
 
-  ## Control de Errores
+  ## Seguridad
+  Para el login se ha utilizado un token jwt, ayúndandonos del bundle [lexik/LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle).
+  
   Para evitar que un usuario actúe sobre urls que no son suyas, se ha implementado un Voter que comprueba si es el propietario de la url.
   
   Además, se ha implementado un filtro de doctrine, de tal manera que un usuario solo puede listar/ver o hacer cualquier operación sobre urls en las que él sea el propietario. 
+  
+  Se pueden crear/editar usuarios por línea de comandos:
+  ```sh
+  php bin/console app:create-update:user [nombre de usuario] [contraseña] [roles separados por comas]
+  ```
+  Ejemplo:
+  ```sh
+  php bin/console app:create-update:user user1 123456 ROLE_ADMIN
+  ```
+  
+  Si el usuario existe, lo edita.
+  
+  
+  Los usuarios deben tener `ROLE_ADMIN` para poder gestionar sus urls.
 
   ## Gestión de Errores en interfaz
   Para evitar que el producto que se entrega no se vea correctamente si aparece en bug, los errores se capturan con un EventListener, y se han controlado: 
@@ -44,6 +60,3 @@ Además de lo que puede hacer el usuario, hay otro endpoint para el que no se re
    - Cualquier otro error será un 500, pero también se captura y se muestra un json con el error controlado y sin la traza.
    
    Si queremos ver los errores completos, antes de mandarlos al usuario se guardan en el fichero de log.
-   
-   ## Seguridad
-   Para el login se ha utilizado un token jwt, ayúndandonos del bundle [lexik/LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle).
