@@ -47,16 +47,16 @@ Además de lo que puede hacer el usuario, hay otro endpoint para el que no se re
   php bin/console app:create-update:user user1 123456 ROLE_ADMIN
   ```
   
-  Si el usuario existe, lo edita.
+  Si el usuario existe, lo edita, si no, lo crea.
   
   
   Los usuarios deben tener `ROLE_ADMIN` para poder gestionar sus urls.
 
   ## Gestión de Errores en interfaz
-  Para evitar que el producto que se entrega no se vea correctamente si aparece en bug, los errores se capturan con un EventListener, y se han controlado: 
-   - Los BadRequest que se lanzan si a los endpoints no llegan los parámetros necesarios
-   - Los NotFound al poner una url incorrecta
-   - Los UniqueConstraintValidator de la base de datos
-   - Cualquier otro error será un 500, pero también se captura y se muestra un json con el error controlado y sin la traza.
+  Para evitar que la api final entregada no se vea correctamente en el cliente si aparece un bug, las excepciones, antes de llegar al cliente se capturan con un EventListener, se han controlado: 
+   - BadRequest que se lanzan si a los endpoints no llegan los parámetros necesarios
+   - NotFound al poner una url incorrecta
+   - UniqueConstraintValidator de la base de datos
+   - Cualquier otro error será un 500, pero también se procesa y se muestra un json con el error controlado y sin la traza.
    
    Si queremos ver los errores completos, antes de mandarlos al usuario se guardan en el fichero de log.
